@@ -93,7 +93,7 @@
               >
                 login with google
               </v-btn>
-              <v-btn
+              <!-- <v-btn
                 block
                 color="warning"
                 @click="cekAuth"
@@ -107,7 +107,7 @@
                 dark
               >
                 logout
-              </v-btn>
+              </v-btn> -->
             </v-card-text>
           </v-card>
         </v-flex>
