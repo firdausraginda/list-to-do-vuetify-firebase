@@ -11,7 +11,7 @@
         <v-flex md4>
           <v-card>
             <v-card-text>
-              <h3 class="text-xs-center headline">Login</h3>
+              <h3 class="text-xs-center headline">Login Dong</h3>
             </v-card-text>
             <v-card-text>
               <v-text-field
