@@ -11,7 +11,7 @@
         <v-flex md4>
           <v-card>
             <v-card-text>
-              <h3 class="text-xs-center headline">Login Dong</h3>
+              <h3 class="text-xs-center headline">Login Dong Edit Authgoogle</h3>
             </v-card-text>
             <v-card-text>
               <v-text-field
@@ -177,19 +177,19 @@ export default {
           console.log(error.email);
           console.log(error.credential);
         });
-      let userRef = db.collection("users");
-      let query = userRef.where("emailUser", "==", auth.currentUser.email);
-      query.get().then(dataUser => {
-        if (dataUser.size == 0) {
-          userRef.add({
-            idUser: auth.currentUser.uid,
-            emailUser: auth.currentUser.email,
-            passwordUser: null,
-            typeUser: "google mail",
-            profilePictureUser: null
-          });
-        }
-      });
+      // let userRef = db.collection("users");
+      // let query = userRef.where("emailUser", "==", auth.currentUser.email);
+      // query.get().then(dataUser => {
+      //   if (dataUser.size == 0) {
+      //     userRef.add({
+      //       idUser: auth.currentUser.uid,
+      //       emailUser: auth.currentUser.email,
+      //       passwordUser: null,
+      //       typeUser: "google mail",
+      //       profilePictureUser: null
+      //     });
+      //   }
+      // });
     },
     logout() {
       auth.signOut().then(() => {
