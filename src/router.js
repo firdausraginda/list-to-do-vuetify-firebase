@@ -25,12 +25,12 @@ let router = new Router({
     {
       path: '/login',
       name: 'login',
-      // component: Login,
       component: () => import('./views/Login.vue')
     },
     {
       path: '/',
       component: () => import('./views/Home.vue'),
+      // redirect ini berfungsi ketika udah login dan masuk ke halaman home, nanti auto manggil route dashboard
       redirect: '/dashboard',
       meta: {
         requiresAuth: true
@@ -72,27 +72,30 @@ router.beforeEach((to, from, next) => {
     // Check if NOT logged in
     if (!auth.currentUser) {
       next({
+        // *akan redirect ke /login ketika blm login tp masuk ke route todo / doing / done
         path: '/login',
-        query: {
-          redirect: to.fullPath
-        }
+        // *dikomen karena kalau akses route todo, doing, atau done nanti di redirect tapi surge ga bisa handle link url nya
+        // query: {
+        //   redirect: to.fullPath
+        // }
       })
     } else {
       next()
     }
   }
-  else if (to.matched.some(record => record.meta.requiresGuest)) {
-    if (auth.currentUser) {
-      next({
-        path: '/login',
-        query: {
-          redirect: to.fullPath
-        }
-      })
-    } else {
-      next()
-    }
-  }
+  // *dikomen karena belum nemu kebutuhan requiresGuest
+  // else if (to.matched.some(record => record.meta.requiresGuest)) {
+  //   if (auth.currentUser) {
+  //     next({
+  //       path: '/login',
+  //       query: {
+  //         redirect: to.fullPath
+  //       }
+  //     })
+  //   } else {
+  //     next()
+  //   }
+  // }
   else {
     next()
   }

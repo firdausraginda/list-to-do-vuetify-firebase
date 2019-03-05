@@ -45,12 +45,12 @@
             </v-card-title>
           </v-card>
         </v-flex>
-        <v-flex md4>
+        <!-- <v-flex md4>
           {{userEmail}}
           <v-btn @click="showData">
             click me
           </v-btn>
-        </v-flex>
+        </v-flex> -->
       </v-layout>
     </v-container>
   </div>

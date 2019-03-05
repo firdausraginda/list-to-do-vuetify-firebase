@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.7e7f5cdd9839e66f5d942480e4755ce1.js"
+  "/precache-manifest.582497643294dda26f833356b7643a45.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "list-to-do-firebase"});

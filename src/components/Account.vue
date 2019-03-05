@@ -52,6 +52,7 @@
                         </v-flex>
                         <v-flex xs12>
                           <v-text-field
+                            disabled
                             v-if="user.typeUser == 'account manual'"
                             label="Password"
                             required
